@@ -46,7 +46,7 @@ def on_click(x, y, button, pressed):
     # If the function returned None, something went wrong
     if not eyes is None:
       # Save the image
-      filename = root + "{} {} {}.jpeg".format(x, y, button)
+      filename = os.path.join(root, "{} {} {}.jpeg".format(x, y, button))
       cv2.imwrite(filename, eyes)
       
 cascade = cv2.CascadeClassifier("haarcascade_eye.xml")
